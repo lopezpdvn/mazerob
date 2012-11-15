@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"> ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xml:lang="en">
+<head></head>
+<body>
+  @author Pedro I. López
+
+  <h2>Project mazerob</h2>
+
+  <p>Project mazerob is a robot that autonomously solves a maze.  The
+  system runs on Java Virtual Machines on a personal computer and a Lego
+  NXT Brick configured as a master-slave architecture.  Project mazerob
+  was partially funded by <a href="http://www.uanl.mx">UANL</a> through
+  the <a
+    href="http://www.uanl.mx/universidad/investigacion/apoyos/provericyt.html">PROVERICYT</a>.</p>
+
+  <h3>Summary</h3>
+
+  <p>The slave is a wheeled vehicle with a rotating ultrasonic range scanner,
+  built with a Lego Mindstorms NXT kit, running software in package {@link
+  mazerob.nxt}.  The master is the PC running software in package {@link
+  mazerob.pc}; it drives the NXT/slave to solve the maze.  Package {@link
+  mazerob.conn} helps with the communication link between the PC/master and
+  NXT/slave through a Bluetooth connection.</p>
+
+  <p>{@link mazerob.pc.PC} is the main application entry, it parses
+  command line positional arguments to configure the NXT.  Executing a
+  {@link mazerob.pc.Robot} method specified by the {@link
+  mazerob.conn.RemotelyControllable} interface invokes the corresponding
+  {@link mazerob.nxt.Robot} method.  The link between the instances
+  methods is implemented over a Bluetooth connection, mapped by
+  constants specified by {@link mazerob.conn.CommandCode}.</p>
+
+</body>
+</html>
