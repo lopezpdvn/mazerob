@@ -26,11 +26,32 @@ public interface RemotelyControllable {
      */
     static final float[] SCANNING_ANGLES = {0f, 45f, 90f, 135f, 180f};
 
+    /** Translate a specific distance in a straight line
+     *
+     * <p>A positive distance causes forward motion, a negative distance
+     * translates backward.</p>
+     *
+     * @param distance The distance to move
+     *
+     * @throws IOException
+     *
+     */
+    public void translate(double distance) throws IOException;
+
     /** Translate forward */
     public void translateForward() throws IOException;
 
     /** Translate backward */
     public void translateBackward() throws IOException;
+
+    /** Rotate through specific angle
+     *
+     * @param angle The wanted angle of rotation in degrees
+     *
+     * @throws IOException
+     *
+     */
+    public void rotate(double angle) throws IOException;
 
     /** Rotate to the right */
     public void rotateRight() throws IOException;
@@ -38,7 +59,17 @@ public interface RemotelyControllable {
     /** Rotate to the left */
     public void rotateLeft() throws IOException;
 
-    /** Scan the environment for object detection */
+    /** Scan the environment for object detection 
+     *
+     * <p>Scanning angles specified by {@link
+     * mazerob.conn.RemotelyControllable#SCANNING_ANGLES}.</p>
+     *
+     * @return A set of {@link lejos.robotics.RangeReadings} taken the
+     * angles specified.
+     *
+     * @throws IOException
+     *
+     */
     public RangeReadings scan() throws IOException;
 
     /** End the connection/program */

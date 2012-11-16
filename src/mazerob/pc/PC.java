@@ -18,26 +18,31 @@ public class PC {
     /** Main application entry point.
      *
      * <p>Command line positional arguments to configure an instance of {@link
-     * mazerob.pc.Robot}.  They are, in order (see {@link
-     * mazerob.pc.Robot#Robot}):</p>
+     * mazerob.pc.Robot} providing arguments for its constructor {@link
+     * mazerob.pc.Robot#Robot}:</p>
      *
-     * <dl>
-     * <dt>r0Name</dt><dd>The name of the NXT</dd>
-     * <dt>r0Address</dt><dd>The bluetooth address of the NXT</dd>
-     * <dt>r0WheelDiameter</dt><dd>Diameter of the tires in mm</dd>
-     * <dt>r0TrackWidth</dt><dd>Distance between center of right tire and
-     * center of left tire in mm</dd>
-     * <dt>r0Reverse</dt><dd>If true, the NXT robot moves forward when the
-     * motors are running backward.</dd>
-     * <dt>r0RotationSpeed</dt><dd>Rotation speed of the vehicle, in degrees
-     * per second</dd>
-     * <dt>r0TranslationMagnitude</dt><dd>Magnitude of translation in mm</dd>
-     * <dt>r0RotationMagnitude</dt><dd>Magnitude of rotation in degrees</dd>
-     * </dl>
+     * <ol>
+     * <li>{@code nxtName} argument to {@link
+     * mazerob.pc.Robot#Robot}</li>
+     * <li>{@code nxtAddr} argument to {@link
+     * mazerob.pc.Robot#Robot}</li>
+     * <li>{@code wheelDiameter} argument to {@link
+     * mazerob.pc.Robot#Robot}</li>
+     * <li>{@code trackWidth} argument to {@link
+     * mazerob.pc.Robot#Robot}</li>
+     * <li>{@code reverse} argument to {@link
+     * mazerob.pc.Robot#Robot}</li>
+     * <li>{@code rotationSpeed} argument to {@link
+     * mazerob.pc.Robot#Robot}</li>
+     * <li>{@code translationMagnitude} argument to {@link
+     * mazerob.pc.Robot#Robot}</li>
+     * <li>{@code rotationMagnitude} argument to {@link
+     * mazerob.pc.Robot#Robot}</li>
+     * </ol>
      *
-     * This method gets a {@link mazerob.pc.Robot} instance configured with the
-     * command line positional arguments, executes {@link
-     * mazerob.pc.MazeSolver#solveMaze} and exits.
+     * <p>This method gets a {@link mazerob.pc.Robot} instance
+     * configured with the command line positional arguments, executes
+     * {@link mazerob.pc.MazeSolver#solveMaze} and exits.</p>
      *
      */
     public static void main(String[] args) {

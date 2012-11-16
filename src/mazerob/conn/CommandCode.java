@@ -12,6 +12,10 @@ package mazerob.conn;
  */
 public enum CommandCode {
 
+    /** Constant that maps {@link mazerob.pc.Robot#translate} to 
+     *  {@link mazerob.nxt.Robot#translate}. */
+    TRANSLATE,
+
     /** Constant that maps {@link mazerob.pc.Robot#translateForward} to 
      *  {@link mazerob.nxt.Robot#translateForward}. */
     TRANSLATE_FORWARD,
@@ -19,6 +23,10 @@ public enum CommandCode {
     /** Constant that maps {@link mazerob.pc.Robot#translateBackward} to 
      * {@link mazerob.nxt.Robot#translateBackward}. */
     TRANSLATE_BACKWARD,
+
+    /** Constant that maps {@link mazerob.pc.Robot#rotate} to 
+     * {@link mazerob.nxt.Robot#rotate}. */
+    ROTATE,
 
     /** Constant that maps {@link mazerob.pc.Robot#rotateRight} to 
      * {@link mazerob.nxt.Robot#rotateRight}. */

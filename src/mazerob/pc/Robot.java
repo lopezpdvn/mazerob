@@ -21,7 +21,7 @@ import mazerob.conn.RemotelyControllable;
  *
  */
 public class Robot implements RemotelyControllable {
-    /** Bluetooth nxt connector object */
+    /** Bluetooth NXT connector object */
     private NXTConnector conn;
 
     /** Data output stream object */
@@ -38,15 +38,18 @@ public class Robot implements RemotelyControllable {
      * @param nxtAddr The bluetooth address of the NXT
      * @param logListener Log listener attached to the Bluetooth
      * connection
-     * @param wheelDiameter Diameter of the tires in mm
-     * @param trackWidth Distance between center of right tire and
-     * center of left tire in mm
-     * @param reverse If true, the NXT robot moves forward when the
-     * motors are running backward
-     * @param rotationSpeed Rotation speed of the vehicle, in degrees
-     * per second
-     * @param translationMagnitude Magnitude of translation in mm
-     * @param rotationMagnitude Magnitude of rotation in degrees
+     * @param wheelDiameter {@code wheelDiameter} argument to {@link 
+     * mazerob.nxt.Robot#Robot}
+     * @param trackWidth {@code trackWidth} argument to {@link
+     * mazerob.nxt.Robot#Robot}
+     * @param reverse {@code reverse} argument to {@link
+     * mazerob.nxt.Robot#Robot}
+     * @param rotationSpeed {@code rotationSpeed} argument to {@link
+     * mazerob.nxt.Robot#Robot}
+     * @param translationMagnitude {@code translationMagnitude} argument to
+     * {@link mazerob.nxt.Robot#Robot}
+     * @param rotationMagnitude {@code rotationMagnitude} argument to {@link
+     * mazerob.nxt.Robot#Robot}
      *
      */
     public Robot(   String nxtName,
@@ -95,10 +98,23 @@ public class Robot implements RemotelyControllable {
 
     }
 
+    /**
+     * Invokes {@link mazerob.nxt.Robot#translate}
+     *
+     * @see mazerob.conn.RemotelyControllable#translate
+     *
+     */
+    public void translate(double distance) throws IOException {
+        dos.writeInt(CommandCode.TRANSLATE.ordinal());
+        dos.flush();
+        dos.writeDouble(distance);
+        dos.flush();
+    }
+
     /** 
      * Invokes {@link mazerob.nxt.Robot#translateForward}
      *
-     * @throws IOException
+     * @see mazerob.conn.RemotelyControllable#translateForward
      *
      */
     public void translateForward() throws IOException {
@@ -109,7 +125,7 @@ public class Robot implements RemotelyControllable {
     /** 
      * Invokes {@link mazerob.nxt.Robot#translateBackward}
      *
-     * @throws IOException
+     * @see mazerob.conn.RemotelyControllable#translateBackward
      *
      */
     public void translateBackward() throws IOException {
@@ -118,9 +134,22 @@ public class Robot implements RemotelyControllable {
     }
 
     /** 
+     * Invokes {@link mazerob.nxt.Robot#rotate}
+     *
+     * @see mazerob.conn.RemotelyControllable#rotate
+     *
+     */
+    public void rotate(double angle) throws IOException {
+        dos.writeInt(CommandCode.ROTATE.ordinal());
+        dos.flush();
+        dos.writeDouble(angle);
+        dos.flush();
+    }
+
+    /** 
      * Invokes {@link mazerob.nxt.Robot#rotateRight}
      *
-     * @throws IOException
+     * @see mazerob.conn.RemotelyControllable#rotateRight
      *
      */
     public void rotateRight() throws IOException {
@@ -131,7 +160,7 @@ public class Robot implements RemotelyControllable {
     /** 
      * Invokes {@link mazerob.nxt.Robot#rotateLeft}
      *
-     * @throws IOException
+     * @see mazerob.conn.RemotelyControllable#rotateLeft
      *
      */
     public void rotateLeft() throws IOException {
@@ -144,10 +173,7 @@ public class Robot implements RemotelyControllable {
      *
      * <p>Prints the range readings to stdout</p>
      *
-     * @return A set of {@link lejos.robotics.RangeReadings} taken the
-     * angles specified.
-     *
-     * @throws IOException
+     * @see mazerob.conn.RemotelyControllable#scan
      *
      */
     public RangeReadings scan() throws IOException {
@@ -163,9 +189,9 @@ public class Robot implements RemotelyControllable {
     /** 
      * Invokes {@link mazerob.nxt.Robot#end}
      *
-     * @throws IOException
-     *
      * <p>Closes Bluetooth connection</p>
+     *
+     * @see mazerob.conn.RemotelyControllable#end
      *
      */
     public void end() throws IOException {

@@ -21,10 +21,12 @@ R0_REVERSE='false'
 # Rotation speed of the vehicle, in degrees per second
 R0_ROTATION_SPEED='90.0'
 
-# Magnitude of translation in mm
+# Magnitude of translation in mm of methods ``translateForward`` and
+# ``translateBackward`` in class ``mazerob.nxt.Robot``
 R0_TRANSLATION_MAGNITUDE='100.0'
 
-# Magnitude of rotation in degrees
+# Magnitude of rotation in degrees of methods ``rotateRight`` and
+# ``rotateLeft`` in class ``mazerob.nxt.Robot``
 R0_ROTATION_MAGNITUDE='85.0'
 # ================ End configuration ==================
 

@@ -20,7 +20,7 @@ class MazeSolver {
         String continueMsg = "Press enter to continue";
         String exitMsg = "Press enter to exit";
 
-        // THIS IS A DEMO, IT DOESN'T SOLVE ANY MAZE.
+        // THIS IS A DEMO!
         r.translateForward();
         System.out.print(continueMsg); System.in.read();
         r.translateBackward();
@@ -30,9 +30,25 @@ class MazeSolver {
         r.rotateLeft();
         System.out.print(continueMsg); System.in.read();
         r.scan();
+        System.out.print(continueMsg); System.in.read();
+
+        r.translate(10.0);
+        System.out.print(continueMsg); System.in.read();
+        r.translate(20.0);
+        System.out.print(continueMsg); System.in.read();
+        r.translate(30.0);
+        System.out.print(continueMsg); System.in.read();
+        r.translate(-15.0);
+        System.out.print(continueMsg); System.in.read();
+        r.translate(-25.0);
+        System.out.print(continueMsg); System.in.read();
+        r.rotate(180.0);
+        System.out.print(continueMsg); System.in.read();
+        r.rotate(-45.0);
+        System.out.print(continueMsg); System.in.read();
+        r.rotate(-45.0);
+
         System.out.print(exitMsg); System.in.read();
         r.end();
-        //
-
     }
 }

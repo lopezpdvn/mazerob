@@ -75,6 +75,9 @@ mazerob on a Linux distribution:
 
 10. Run ``make docs`` to build the documentation and read it.
 
+11. Read the ``solveMaze`` method example in the ``mazerob.pc.MazeSolver``
+    class.
+
 .. note:: To develop the actual program that will solve the maze, you don't
    have to modify the program that runs on the NXT brick, just modify the
    ``solveMaze`` method of the ``mazerob.pc.MazeSolver`` class.

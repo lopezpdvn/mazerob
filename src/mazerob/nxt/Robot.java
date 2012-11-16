@@ -13,30 +13,33 @@ import lejos.robotics.navigation.DifferentialPilot;
 import mazerob.conn.RemotelyControllable;
 
 /**
- * Low level Robot functionality specified by {@link
- * mazerob.conn.RemotelyControllable}
+ * NXT Explorer abstraction
  *
  * @author Pedro I. López
+ *
+ * @see <a
+ * href="http://www.nxtprograms.com/NXT2/explorer/steps.html">NXT Explorer</a>
  *
  */
 class Robot implements RemotelyControllable {
 
-    /** Return only when the whole movement is complete */
-    static final boolean DISPLACEMENT_IMMEDIATE_RETURN = false;
-
-    /** Abstraction of the Robot's ultrasonic sensor */
+    /** Abstraction of the Explorer's ultrasonic sensor */
     RotatingRangeScanner scanner;
 
-    /** Instance of the Pilot mechanism to control the Robot movements */
+    /** Instance of the Pilot mechanism to control the Explorer movements */
     DifferentialPilot pilot;
 
-    /** Magnitude of translation movement in mm specified by the
+    /** Magnitude of translation in mm of methods {@link
+     * mazerob.nxt.Robot#translateForward} and {@link
+     * mazerob.nxt.Robot#translateBackward} specified by the
      * {@code translationMagnitude} argument in {@link
      * mazerob.nxt.Robot#Robot}
      */
     double translationMagnitude;
 
-    /** Magnitude of rotation movement in degrees specified by the
+    /** Magnitude of rotation in degrees of methods {@link
+     * mazerob.nxt.Robot#rotateRight} and {@link
+     * mazerob.nxt.Robot#rotateLeft} specified by the
      * {@code rotationMagnitude} argument in {@link
      * mazerob.nxt.Robot#Robot}
      */
@@ -50,8 +53,13 @@ class Robot implements RemotelyControllable {
      * motors are running backward
      * @param rotationSpeed Rotation speed of the vehicle, in degrees
      * per second
-     * @param translationMagnitude Magnitude of translation in mm
-     * @param rotationMagnitude Magnitude of rotation in degrees
+     * @param translationMagnitude Magnitude of translation in mm of methods
+     * {@link mazerob.nxt.Robot#translateForward} and {@link
+     * mazerob.nxt.Robot#translateBackward}
+     * @param rotationMagnitude Magnitude of rotation in degrees of methods
+     * {@link mazerob.nxt.Robot#rotateRight} and {@link
+     * mazerob.nxt.Robot#rotateLeft}
+     *
      */
     public Robot(double wheelDiameter,
                       double trackWidth,
@@ -74,42 +82,68 @@ class Robot implements RemotelyControllable {
     }
 
     /**
-     * Translate forward {@link Robot#translationMagnitude} mm.  Wait
-     * until done, see {@link Robot#DISPLACEMENT_IMMEDIATE_RETURN}
+     * Wait until translation is done
+     *
+     * @see mazerob.conn.RemotelyControllable#translate
+     */
+    public void translate(double distance) {
+        pilot.travel(distance);
+    }
+
+    /**
+     * Translate forward {@link Robot#translationMagnitude} mm,  wait until
+     * translation is done
+     *
+     * @see mazerob.conn.RemotelyControllable#translateForward
      */
     public void translateForward() {
-        pilot.travel(translationMagnitude, DISPLACEMENT_IMMEDIATE_RETURN);
+        pilot.travel(translationMagnitude);
     }
 
     /**
-     * Translate backward {@link Robot#translationMagnitude} mm.  Wait
-     * until done, see {@link Robot#DISPLACEMENT_IMMEDIATE_RETURN}
+     * Translate backward {@link Robot#translationMagnitude} mm,  wait until
+     * translation is done
+     *
+     * @see mazerob.conn.RemotelyControllable#translateBackward
      */
     public void translateBackward() {
-        pilot.travel(-translationMagnitude, DISPLACEMENT_IMMEDIATE_RETURN);
+        pilot.travel(-translationMagnitude);
     }
 
     /**
-     * Rotate to the right {@link Robot#rotationMagnitude} mm.  Wait
-     * until done, see {@link Robot#DISPLACEMENT_IMMEDIATE_RETURN}
+     * Wait until rotation is done
+     *
+     * @see mazerob.conn.RemotelyControllable#rotate
+     */
+    public void rotate(double angle) {
+        pilot.rotate(angle);
+    }
+
+    /**
+     * Rotate to the right {@link Robot#rotationMagnitude} mm,  wait until
+     * rotation is done
+     *
+     * @see mazerob.conn.RemotelyControllable#rotateRight
      */
     public void rotateRight() {
-        pilot.rotate(rotationMagnitude, DISPLACEMENT_IMMEDIATE_RETURN);
+        pilot.rotate(rotationMagnitude);
     }
 
     /**
-     * Rotate to the left {@link Robot#rotationMagnitude} mm.  Wait
-     * until done, see {@link Robot#DISPLACEMENT_IMMEDIATE_RETURN}
+     * Rotate to the left {@link Robot#rotationMagnitude} mm,  wait until
+     * rotation is done
+     *
+     * @see mazerob.conn.RemotelyControllable#rotateLeft
      */
     public void rotateLeft() {
-        pilot.rotate(-rotationMagnitude, DISPLACEMENT_IMMEDIATE_RETURN);
+        pilot.rotate(-rotationMagnitude);
     }
 
     /**
      * End the connection and exit the {@link mazerob.nxt.RobotApp}
      * program
      *
-     * @exception RuntimeException
+     * @see mazerob.conn.RemotelyControllable#end
      */
     public void end() throws RuntimeException {
         System.out.println(CLOSING_CONN_MSG);
@@ -117,17 +151,10 @@ class Robot implements RemotelyControllable {
     }
 
     /**
-     * Scan the environment for object detection
-     *
-     * <p>Scanning angles specified by {@link
-     * Robot#SCANNING_ANGLES}.</p>
-     *
-     * @return A set of {@link lejos.robotics.RangeReadings} taken the
-     * angles specified.
+     * @see mazerob.conn.RemotelyControllable#scan
      */
     public RangeReadings scan() {
         RangeReadings rangeValues = scanner.getRangeValues();
-        rangeValues.printReadings();
         return rangeValues;
     }
 

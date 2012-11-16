@@ -51,6 +51,7 @@ public class RobotApp {
         BTConnection btc;
         CommandCode commandCode;
         CommandCode[] commandCodeValues = CommandCode.values();
+        double distance, angle;
         Robot robot;
 
         System.out.println(WAITING_MSG);
@@ -71,11 +72,19 @@ public class RobotApp {
                 commandCode = commandCodeValues[dis.readInt()];
 
                 switch(commandCode) {
+                    case TRANSLATE:
+                        distance = dis.readDouble();
+                        robot.translate(distance);
+                        break;
                     case TRANSLATE_FORWARD:
                         robot.translateForward();
                         break;
                     case TRANSLATE_BACKWARD:
                         robot.translateBackward();
+                        break;
+                    case ROTATE:
+                        angle = dis.readDouble();
+                        robot.rotate(angle);
                         break;
                     case ROTATE_RIGHT:
                         robot.rotateRight();
