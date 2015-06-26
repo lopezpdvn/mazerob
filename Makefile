@@ -1,5 +1,5 @@
 # mazerob Makefile
-# (C) 2012 Pedro I. López <dreilopz@gmail.com>
+# (C) 2012 Pedro Ivan Lopez <m@pedroivanlopez.com>
 
 # ================ Begin configuration ================
 # The name of the NXT
