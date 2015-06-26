@@ -42,6 +42,7 @@ help:
 	@echo "  pc      to compile the PC program"
 	@echo "  pcrun   to run the PC program"
 	@echo "  clean   to clean the environment"
+	@echo "  push    push selected branches to remote repository"
 
 docs:
 	javadoc -charset 'UTF-8' \
@@ -88,3 +89,6 @@ pcrun:	pc
 
 clean:
 	rm -rf doc/* build/*
+
+push:
+	git push origin master dev
