@@ -1,28 +1,21 @@
-=======
-mazerob
-=======
------------------
-Maze solver robot
------------------
---------------
-IN DEVELOPMENT
---------------
+# mazerob
 
-(C) 2012 Pedro I. López <dreilopz@gmail.com>
+## Maze solver robot
 
-Project **mazerob** is a robot that autonomously solves a maze.  The
-system runs on Java Virtual Machines on a personal computer and a Lego
-NXT Brick configured as a master-slave architecture.  Project mazerob
-was partially funded by UANL (http://www.uanl.mx) through the PROVERICYT
-(http://www.uanl.mx/universidad/investigacion/apoyos/provericyt.html)
+(C) 2012 [Pedro Ivan Lopez](http://pedroivanlopez.com)
 
-Online documentation at
-http://www.dreilopz.me/mazerob/mazerob-dev/doc/index.html.
+[*Project in development*]
 
-Project website at http://www.dreilopz.me/mazerob
+Project **mazerob** is a robot that autonomously solves a maze.  The system
+runs on Java Virtual Machines on a personal computer and a Lego NXT Brick
+configured as a master-slave architecture.  Project mazerob was partially
+funded by [UANL](http://www.uanl.mx) through the
+[PROVERICYT](http://www.uanl.mx/universidad/investigacion/apoyos/provericyt.html)
 
-Project dirs and files
-======================
+- [Project website](http://pedroivanlopez.com/mazerob)
+- [Online documentation](http://pedroivanlopez.com/mazerob/doc)
+
+## Project dirs and files
 
 :``README.txt``:
   This document.
@@ -37,8 +30,7 @@ Project dirs and files
   Makefile for configuring, building, flashing and running the software.  Also
   for building the documentation.
 
-Development
-===========
+## Development
 
 mazerob has only been developed on Fedora 17 but development and
 deployment can be ported to other Linux distributions and Windows too.
@@ -82,8 +74,7 @@ mazerob on a Linux distribution:
    have to modify the program that runs on the NXT brick, just modify the
    ``solveMaze`` method of the ``mazerob.pc.MazeSolver`` class.
 
-References
-==========
+## References
 
 .. [R0] http://www.nxtprograms.com/NXT2/explorer/steps.html
 
