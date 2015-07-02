@@ -40,9 +40,9 @@ yourself a development environment for project mazerob on a Linux distribution:
 3. Build a *Explorer* following instructions from [NXT Explorer - Building
    instructions][]:
 
-4. [Install leJOS NXJ 0.9.1 on a Bluetooth-enabled computer][Getting Started on
-   Linux]. Make sure `java`, `javac`, `javadoc`, `nxjc`, `nxj`, `nxjpcc` and
-   `nxjpc` are in your `PATH` environment variable.  
+4. [Install leJOS NXJ 0.9.1 on a Bluetooth-enabled computer]
+   [Getting Started on Linux]. Make sure `java`, `javac`, `javadoc`, `nxjc`,
+   `nxj`, `nxjpcc` and `nxjpc` are in your `PATH` environment variable.
 
 5. Install utilities and libraries (names of Fedora packages, look for your
    distribution's equivalents): `bluecove`, `bluez-libs-devel`, `nxtrc`,
@@ -56,7 +56,7 @@ yourself a development environment for project mazerob on a Linux distribution:
 
 8. Read the `Makefile` configuration section at the beginning.  Tune the
    variables if needed.
-   
+
 9. Read the output of `make help`.
 
 10. Run `make docs` to build the documentation and read it.
