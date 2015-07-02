@@ -1,8 +1,6 @@
-# mazerob
-=========
+# # mazerob ###########################################################
 
-Maze solver robot
------------------
+**Maze solver robot**
 
 (C) 2012 [Pedro Ivan Lopez](http://pedroivanlopez.com)
 
@@ -17,8 +15,7 @@ funded by [UANL](http://www.uanl.mx) through the
 - [Project website](http://pedroivanlopez.com/mazerob)
 - [Online documentation](http://pedroivanlopez.com/mazerob/doc)
 
-Project dirs and files
-----------------------
+## Project dirs and files ############################################
 
 - `README.txt`: This document.
 
@@ -29,8 +26,7 @@ Project dirs and files
 - `Makefile`: Makefile for configuring, building, flashing and running the
   software.  Also for building the documentation.
 
-Development
------------
+## Development #######################################################
 
 mazerob has only been developed on Fedora 17 but development and deployment can
 be ported to other Linux distributions and Windows too.  Follow these steps to
@@ -71,8 +67,7 @@ distribution:
 > have to modify the program that runs on the NXT brick, just modify the
 > `solveMaze` method of the `mazerob.pc.MazeSolver` class.
 
-References
-----------
+## References ########################################################
 
 - [R0] http://www.nxtprograms.com/NXT2/explorer/steps.html
 
