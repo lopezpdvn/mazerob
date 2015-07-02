@@ -2,3 +2,6 @@
 *.swp
 *.swo
 /tmp
+/doc
+/build
+/LOCAL_README.txt
