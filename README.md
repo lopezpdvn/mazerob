@@ -67,7 +67,7 @@ yourself a development environment for project mazerob on a Linux distribution:
 > have to modify the program that runs on the NXT brick, just modify the
 > `solveMaze` method of the `mazerob.pc.MazeSolver` class.
 
-## References ########################################################
+<!-- References ################################################### -- >
 
 [NXT Explorer - Building instructions]:
 http://www.nxtprograms.com/NXT2/explorer/steps.html
