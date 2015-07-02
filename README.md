@@ -17,9 +17,9 @@ funded by [UANL](http://www.uanl.mx) through the
 
 ## Project dirs and files ############################################
 
-- `README.txt`: This document.
+- `README.md`: This document.
 
-- `LICENSE.txt`: Project's license and copyright information.
+- `LICENSE.md`: Project's license and copyright information.
 
 - `src`: Project's source code.
 
@@ -35,8 +35,8 @@ distribution:
 
 1. Get a Lego NXT Brick, parts, sensors and actuators kit.
 
-2. Flash the leJOS NXJ 0.9.1 firmware to your NXT (see [R1]_ section
-   *Getting Started - Linux*).
+2. Flash the leJOS NXJ 0.9.1 firmware to your NXT (see [Getting Started on
+   Linux][]).
 
 3. Build a *Explorer* following the instructions at [R0]_.
 
@@ -69,6 +69,8 @@ distribution:
 
 ## References ########################################################
 
-- [R0] http://www.nxtprograms.com/NXT2/explorer/steps.html
+[0]: http://www.nxtprograms.com/NXT2/explorer/steps.html "NXT Explorer"
 
-- [R1] http://lejos.sourceforge.net/nxt/nxj/tutorial/index.htm
+[Getting Started on Linux]:
+http://www.lejos.org/nxt/nxj/tutorial/Preliminaries/GettingStartedLinux.htm
+"Getting Started on Linux"
